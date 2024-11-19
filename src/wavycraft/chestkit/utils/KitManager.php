@@ -142,7 +142,8 @@ final class KitManager {
         $inventory = $player->getInventory();
         $emptySlots = 0;
 
-        foreach ($inventory->getContents() as $slot => $item) {
+        for ($i = 0; $i < $inventory->getSize(); $i++) {
+            $item = $inventory->getItem($i);
             if ($item->isNull()) {
                 $emptySlots++;
             }
