@@ -109,7 +109,7 @@ class KitCommand extends Command implements PluginOwned {
         $player->sendForm($form);
     }
 
-    public function getPluginOwned() : Plugin{
+    public function getOwningPlugin() : Plugin{
         return $this->plugin;
     }
 }
