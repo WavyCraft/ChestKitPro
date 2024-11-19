@@ -21,6 +21,8 @@ use function array_map;
 
 use wavycraft\chestkit\Loader;
 
+use DaPigGuy\PiggyCustomEnchants\enchants\CustomEnchantManager;
+
 final class KitManager {
     use SingletonTrait;
 
@@ -77,11 +79,17 @@ final class KitManager {
                         $item->setLore($colorizedLore);
                     }
 
-                    if (isset($armorData["enchantments"])) {
-                        foreach ($armorData["enchantments"] as $enchantName => $level) {
-                            $enchantment = StringToEnchantmentParser::getInstance()->parse($enchantName);
+                    if (isset($armorData['enchantments'])) {
+                        foreach ($armorData['enchantments'] as $enchantmentName => $enchantmentLevel) {
+                            $enchantment = StringToEnchantmentParser::getInstance()->parse($enchantmentName);
+
+                            if ($enchantment === null && class_exists(CustomEnchantManager::class)) {
+                                $enchantment = CustomEnchantManager::getEnchantmentByName($enchantmentName);
+                            }
+
                             if ($enchantment !== null) {
-                                $item->addEnchantment(new EnchantmentInstance($enchantment, (int)$level));
+                                $enchantmentInstance = new EnchantmentInstance($enchantment, (int) $enchantmentLevel);
+                                $item->addEnchantment($enchantmentInstance);
                             }
                         }
                     }
@@ -105,11 +113,17 @@ final class KitManager {
                     $item->setLore($colorizedLore);
                 }
 
-                if (isset($itemData["enchantments"])) {
-                    foreach ($itemData["enchantments"] as $enchantName => $level) {
-                        $enchantment = StringToEnchantmentParser::getInstance()->parse($enchantName);
+                if (isset($itemData['enchantments'])) {
+                    foreach ($itemData['enchantments'] as $enchantmentName => $enchantmentLevel) {
+                        $enchantment = StringToEnchantmentParser::getInstance()->parse($enchantmentName);
+
+                        if ($enchantment === null && class_exists(CustomEnchantManager::class)) {
+                            $enchantment = CustomEnchantManager::getEnchantmentByName($enchantmentName);
+                        }
+
                         if ($enchantment !== null) {
-                            $item->addEnchantment(new EnchantmentInstance($enchantment, (int)$level));
+                            $enchantmentInstance = new EnchantmentInstance($enchantment, (int) $enchantmentLevel);
+                            $item->addEnchantment($enchantmentInstance);
                         }
                     }
                 }
