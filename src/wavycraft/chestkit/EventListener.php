@@ -19,7 +19,6 @@ class EventListener implements Listener {
 
     public function onPlayerInteract(PlayerInteractEvent $event): void {
         $player = $event->getPlayer();
-        $block = $event->getBlock();
         $item = $event->getItem();
 
         if ($item->getNamedTag()->getTag("ChestKit", StringTag::class)) {
