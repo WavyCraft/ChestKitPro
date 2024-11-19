@@ -1,9 +1,9 @@
-name: ChestKit
+name: ChestKitPro
 version: 1.0.0
 author: WavyCraft
 api: 5.0.0
 main: wavycraft\chestkit\Loader
 
 permissions:
-  chestkit.cmd:
+  chestkitpro.cmd:
     default: true
