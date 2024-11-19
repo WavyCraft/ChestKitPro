@@ -56,6 +56,11 @@ final class KitManager {
         $kit = $this->getKit($kitName);
         if ($kit === null) return false;
 
+        if (!$this->hasEnoughSpace($player, $kit)) {
+            $player->sendMessage(TextColor::RED . "Your inventory is too full to receive the kit items. Please free up some space.");
+            return false;
+        }
+
         $cooldownManager = CooldownManager::getInstance();
         $cooldownManager->setCooldown($player, $kitName, $kit["cooldown"] ?? 0);
 
@@ -68,20 +73,20 @@ final class KitManager {
                     }
 
                     if (isset($armorData["lore"])) {
-                        $colorizedLore = array_map(static fn($line) => TextColor::colorize($line), (array) $armorData["lore"]);
+                        $colorizedLore = array_map(static fn($line) => TextColor::colorize($line), (array)$armorData["lore"]);
                         $item->setLore($colorizedLore);
                     }
 
                     if (isset($armorData["enchantments"])) {
                         foreach ($armorData["enchantments"] as $enchantName => $level) {
-                        $enchantment = StringToEnchantmentParser::getInstance()->parse($enchantName);
+                            $enchantment = StringToEnchantmentParser::getInstance()->parse($enchantName);
                             if ($enchantment !== null) {
                                 $item->addEnchantment(new EnchantmentInstance($enchantment, (int)$level));
                             }
                         }
                     }
 
-                  $player->getInventory()->addItem($item);
+                    $player->getInventory()->addItem($item);
                 }
             }
         }
@@ -96,7 +101,7 @@ final class KitManager {
                 }
 
                 if (isset($itemData["lore"])) {
-                    $colorizedLore = array_map(static fn($line) => TextColor::colorize($line), (array) $itemData["lore"]);
+                    $colorizedLore = array_map(static fn($line) => TextColor::colorize($line), (array)$itemData["lore"]);
                     $item->setLore($colorizedLore);
                 }
 
@@ -131,5 +136,19 @@ final class KitManager {
         $chest->setNamedTag($nbt);
         $player->getInventory()->addItem($chest);
         return $chest;
+    }
+
+    private function hasEnoughSpace(Player $player, array $kit) : bool{
+        $inventory = $player->getInventory();
+        $emptySlots = 0;
+
+        foreach ($inventory->getContents() as $slot => $item) {
+            if ($item->isNull()) {
+                $emptySlots++;
+            }
+        }
+
+        $requiredSlots = count($kit["items"]) + count($kit["armor"]);
+        return $emptySlots >= $requiredSlots;
     }
 }
