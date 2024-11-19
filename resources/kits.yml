@@ -34,6 +34,7 @@ kits:
     permission: "chestkitpro.starter"
     kit_name: "&r&eStarter kit"
     kit_lore:
+      - ""
       - "&r&l&f(&e!&f)&r&f Interact to claim the kit!"
       - ""
       - "&r&fContains:"
@@ -45,7 +46,7 @@ kits:
       - ""
       - " &r&fItems:"
       - "  &r&e- Enchanted Iron Sword"
-      - "  &r&e- 5x Steak"
+      - "  &r&e- 64x Steak"
     cooldown: 3600
     armor:
       - helmet:
@@ -75,12 +76,13 @@ kits:
         enchantments:
           sharpness: 1
       - id: "cooked_beef"
-        count: 5
+        count: 64
 
   vip:
     permission: "chestkitpro.vip"
     kit_name: "&r&bVIP kit"
     kit_lore:
+      - ""
       - "&r&l&f(&e!&f)&r&f Interact to claim the kit!"
       - ""
       - "&r&fContains:"
@@ -92,7 +94,12 @@ kits:
       - ""
       - " &r&fItems:"
       - "  &r&e- Diamond Sword"
-      - "  &r&e- 10x Steak"
+      - "  &r&e- Diamond Pickaxe"
+      - "  &r&e- Diamond Shovel"
+      - "  &r&e- Diamond Axe"
+      - "  &r&e- 64x Steak"
+      - "  &r&e- 16x Golden Apple"
+      - "  &r&e- 4x Ender Pearls"
     cooldown: 7200
     armor:
       - helmet:
@@ -115,5 +122,15 @@ kits:
         name: "VIP Sword"
         lore: 
           - "&r&eA powerful sword for VIPs."
+      - id: "diamond_pickaxe"
+        count: 1
+      - id: "diamond_axe"
+        count: 1
+      - id: "diamond_shovel"
+        count: 1
       - id: "cooked_beef"
-        count: 10
+        count: 64
+      - id: "golden_apple"
+        count: 16
+      - id: "ender_pearl"
+        count: 3
