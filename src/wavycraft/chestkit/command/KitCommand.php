@@ -33,7 +33,7 @@ class KitCommand extends Command implements PluginOwned {
     public function __construct() {
         parent::__construct("kit");
         $this->setDescription("Access available kits");
-        $this->setPermission("chestkit.cmd");
+        $this->setPermission("chestkitpro.cmd");
 
         $this->plugin = Loader::getInstance();
         $this->kitManager = KitManager::getInstance();
