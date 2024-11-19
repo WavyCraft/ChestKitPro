@@ -83,7 +83,7 @@ class KitCommand extends Command implements PluginOwned {
 
     private function openConfirmationForm(Player $player, string $kitName) {
         $form = new ModalForm(function (Player $player, ?bool $data) use ($kitName) {
-            if ($data === null) {
+            if ($data === null || $data === false) {
                 $player->sendMessage(TextColor::RED . "Kit selection canceled...");
                 return;
             }
