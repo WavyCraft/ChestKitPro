@@ -1,6 +1,7 @@
 name: ChestKitPro
 version: 1.0.0
 author: WavyCraft
+authors: ["Terpz710"] #Contributors place your name here, Thanks - WavyCraftNetwork
 api: 5.0.0
 main: wavycraft\chestkit\Loader
 
