@@ -5,6 +5,8 @@
 # You may use "&" for the color code                     |
 # Example: "&eYellow"                                    |
 #                                                        |
+# PiggyCustomEnchantments is supported                 |
+#                                                        |
 # test:                                                  |
 #    permission: "chestkitpro.test" - Unique permission  |
 #    kit_name: "&r&1Test kit" - Chest kit display name   |
@@ -75,6 +77,8 @@ kits:
         name: "Starter Sword"
         enchantments:
           sharpness: 1
+          disarming: 1
+          backstab: 1
       - id: "cooked_beef"
         count: 64
 
