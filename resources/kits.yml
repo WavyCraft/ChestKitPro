@@ -99,7 +99,7 @@ kits:
       - "  &r&e- Diamond Axe"
       - "  &r&e- 64x Steak"
       - "  &r&e- 16x Golden Apple"
-      - "  &r&e- 4x Ender Pearls"
+      - "  &r&e- 3x Ender Pearls"
     cooldown: 7200
     armor:
       - helmet:
