@@ -5,6 +5,8 @@ authors: ["Terpz710"] #Contributors place your name here, Thanks - WavyCraftNetw
 api: 5.0.0
 main: wavycraft\chestkit\Loader
 
+softdepend: ["PiggyCustomEnchants"]
+
 permissions:
   chestkitpro.cmd:
     default: true
