@@ -1,37 +1,37 @@
 # Kit creation tutorial - Created November Monday 18, 2024 at 8:42 PST
 # 11/18/2024
-#-----------------------------------------------------
-#                                                    |
-# You may use "&" for the color code                 |
-# Example: "&eYellow"                                |
-#                                                    |
+#------------------------------------------------------
+#                                                     |
+# You may use "&" for the color code                  |
+# Example: "&eYellow"                                 |
+#                                                     |
 # test:                                               |
-#    permission: "chestkit.test" - Unique permission  |
+#    permission: "chestkitpro.test" - Unique permission  |
 #    kit_name: "&r&1Test kit" - Chest kit display name|
-#    kit_lore: [] - Chest kit lore                   |
-#    cooldown: 7200 - Chest kit cooldown in seconds  |
-#    armor: - Chest kit armor section                |
-#   (Custom name, lore and enchantments are optional)|
-#      - helmet:                                     |
-#          id: "diamond_helmet"                      |                  
-#      - chestplate:                                 |
-#          id: "diamond_chestplate"                  |
-#      - leggings:                                   |
-#          id: "diamond_leggings"                    |
-#      - boots:                                      |
-#          id: "diamond_boots"                       |
-#    items:                                          |
-#   (Custom name, lore and enchantments are optional |
-#    but the count is mandatory)                     |
-#      - id: "diamond_sword"                         |
-#        count: 1                                    |
-#      - id: "cooked_beef"                           |
-#        count: 10                                   |
-#-----------------------------------------------------
+#    kit_lore: [] - Chest kit lore                    |
+#    cooldown: 7200 - Chest kit cooldown in seconds   |
+#    armor: - Chest kit armor section                 |
+#   (Custom name, lore and enchantments are optional) |
+#      - helmet:                                      |
+#          id: "diamond_helmet"                       |                  
+#      - chestplate:                                  |
+#          id: "diamond_chestplate"                   |
+#      - leggings:                                    |
+#          id: "diamond_leggings"                     |
+#      - boots:                                       |
+#          id: "diamond_boots"                        |
+#    items:                                           |
+#   (Custom name, lore and enchantments are optional  |
+#    but the count is mandatory)                      |
+#      - id: "diamond_sword"                          |
+#        count: 1                                     |
+#      - id: "cooked_beef"                            |
+#        count: 10                                    |
+#------------------------------------------------------
 
 kits:
   starter:
-    permission: "chestkit.starter"
+    permission: "chestkitpro.starter"
     kit_name: "&r&eStarter kit"
     kit_lore:
       - "&r&l&f(&e!&f)&r&f Interact to claim the kit!"
@@ -78,7 +78,7 @@ kits:
         count: 5
 
   vip:
-    permission: "chestkit.vip"
+    permission: "chestkitpro.vip"
     kit_name: "&r&bVIP kit"
     kit_lore:
       - "&r&l&f(&e!&f)&r&f Interact to claim the kit!"
