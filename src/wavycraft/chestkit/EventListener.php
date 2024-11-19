@@ -34,7 +34,7 @@ class EventListener implements Listener {
             $event->cancel();
 
             if ($kitManager->giveKit($player, $kitName)) {
-                $player->sendMessage(TextColor::GREEN . "You have claimed the " . TextColor::YELLOW . ucfirst($kitName) . "kit" . TextColor::GREEN . "!");
+                $player->sendMessage(TextColor::GREEN . "You have claimed the " . TextColor::YELLOW . ucfirst($kitName) . " kit" . TextColor::GREEN . "!");
             } else {
                 $player->sendMessage(TextColor::RED . "Failed to give kit items...");
             }
