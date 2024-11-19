@@ -26,6 +26,7 @@ use jojoe77777\FormAPI\ModalForm;
 
 class KitCommand extends Command implements PluginOwned {
 
+    private $plugin;
     private $kitManager;
     private $cooldownManager;
 
