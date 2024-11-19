@@ -57,7 +57,7 @@ final class KitManager {
         if ($kit === null) return false;
 
         if (!$this->hasEnoughSpace($player, $kit)) {
-            $player->sendMessage(TextColor::RED . "Your inventory is too full to receive the kit items. Please free up some space.");
+            $player->sendMessage(TextColor::RED . "Your inventory is too full to receive the kit items, Please free up some space...");
             return false;
         }
 
