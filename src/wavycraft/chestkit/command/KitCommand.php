@@ -7,19 +7,24 @@ namespace wavycraft\chestkit\command;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 
+use pocketmine\plugin\Plugin;
+use pocketmine\plugin\PluginOwned;
+
 use pocketmine\player\Player;
 
 use pocketmine\utils\TextFormat as TextColor;
 
 use function ucfirst;
 
+use wavycraft\chestkit\Loader;
+
 use wavycraft\chestkit\utils\KitManager;
 use wavycraft\chestkit\utils\CooldownManager;
 
-use wavycraft\core\form\SimpleForm;
-use wavycraft\core\form\ModalForm;
+use jojoe77777\FormAPI\SimpleForm;
+use jojoe77777\FormAPI\ModalForm;
 
-class KitCommand extends Command {
+class KitCommand extends Command implements PluginOwned {
 
     private $kitManager;
     private $cooldownManager;
@@ -29,6 +34,7 @@ class KitCommand extends Command {
         $this->setDescription("Access available kits");
         $this->setPermission("chestkit.cmd");
 
+        $this->plugin = Loader::getInstance();
         $this->kitManager = KitManager::getInstance();
         $this->cooldownManager = CooldownManager::getInstance();
     }
@@ -100,5 +106,9 @@ class KitCommand extends Command {
         $form->setButton1("Yes");
         $form->setButton2("No");
         $player->sendForm($form);
+    }
+
+    public function getPluginOwned() : Plugin{
+        return $this->plugin;
     }
 }
