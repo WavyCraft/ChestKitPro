@@ -1,0 +1,119 @@
+# Kit creation tutorial - Created November Monday 18, 2024 at 8:42 PST
+# 11/18/2024
+#-----------------------------------------------------
+#                                                    |
+# You may use "&" for the color code                 |
+# Example: "&eYellow"                                |
+#                                                    |
+# test:                                               |
+#    permission: "chestkit.test" - Unique permission  |
+#    kit_name: "&r&1Test kit" - Chest kit display name|
+#    kit_lore: [] - Chest kit lore                   |
+#    cooldown: 7200 - Chest kit cooldown in seconds  |
+#    armor: - Chest kit armor section                |
+#   (Custom name, lore and enchantments are optional)|
+#      - helmet:                                     |
+#          id: "diamond_helmet"                      |                  
+#      - chestplate:                                 |
+#          id: "diamond_chestplate"                  |
+#      - leggings:                                   |
+#          id: "diamond_leggings"                    |
+#      - boots:                                      |
+#          id: "diamond_boots"                       |
+#    items:                                          |
+#   (Custom name, lore and enchantments are optional |
+#    but the count is mandatory)                     |
+#      - id: "diamond_sword"                         |
+#        count: 1                                    |
+#      - id: "cooked_beef"                           |
+#        count: 10                                   |
+#-----------------------------------------------------
+
+kits:
+  starter:
+    permission: "chestkit.starter"
+    kit_name: "&r&eStarter kit"
+    kit_lore:
+      - "&r&l&f(&e!&f)&r&f Interact to claim the kit!"
+      - ""
+      - "&r&fContains:"
+      - " &r&fArmor:"
+      - "  &r&e- Enchanted Diamond Helmet"
+      - "  &r&e- Enchanted Diamond Chestplate"
+      - "  &r&e- Enchanted Diamond Leggings"
+      - "  &r&e- Enchanted Diamond Boots"
+      - ""
+      - " &r&fItems:"
+      - "  &r&e- Enchanted Iron Sword"
+      - "  &r&e- 5x Steak"
+    cooldown: 3600
+    armor:
+      - helmet:
+          id: "diamond_helmet"
+          name: "Starter Helmet"
+          enchantments:
+            protection: 1
+      - chestplate:
+          id: "diamond_chestplate"
+          name: "Starter Chestplate"
+          enchantments:
+            unbreaking: 1
+      - leggings:
+          id: "diamond_leggings"
+          name: "Starter Leggings"
+          enchantments:
+            protection: 1
+      - boots:
+          id: "diamond_boots"
+          name: "Starter Boots"
+          enchantments:
+            feather_falling: 2
+    items:
+      - id: "iron_sword"
+        count: 1
+        name: "Starter Sword"
+        enchantments:
+          sharpness: 1
+      - id: "cooked_beef"
+        count: 5
+
+  vip:
+    permission: "chestkit.vip"
+    kit_name: "&r&bVIP kit"
+    kit_lore:
+      - "&r&l&f(&e!&f)&r&f Interact to claim the kit!"
+      - ""
+      - "&r&fContains:"
+      - " &r&fArmor:"
+      - "  &r&e- Diamond Helmet"
+      - "  &r&e- Diamond Chestplate"
+      - "  &r&e- Diamond Leggings"
+      - "  &r&e- Diamond Boots"
+      - ""
+      - " &r&fItems:"
+      - "  &r&e- Diamond Sword"
+      - "  &r&e- 10x Steak"
+    cooldown: 7200
+    armor:
+      - helmet:
+          id: "diamond_helmet"
+          name: "VIP Helmet"
+          lore:
+            - "&r&eVIP Helmet"
+      - chestplate:
+          id: "diamond_chestplate"
+          name: "VIP Chestplate"
+      - leggings:
+          id: "diamond_leggings"
+          name: "VIP Leggings"
+      - boots:
+          id: "diamond_boots"
+          name: "VIP Boots"
+    items:
+      - id: "diamond_sword"
+        count: 1
+        name: "VIP Sword"
+        lore: 
+          - "&r&eA powerful sword for VIPs."
+      - id: "cooked_beef"
+        count: 10
