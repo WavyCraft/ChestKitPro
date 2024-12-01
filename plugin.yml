@@ -3,7 +3,6 @@ version: 1.0.0
 authors:
   - WavyCraft
   - Terpz710
-contributors: []
 api: 5.0.0
 main: wavycraft\chestkit\Loader
 
