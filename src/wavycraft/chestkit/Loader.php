@@ -20,7 +20,7 @@ final class Loader extends PluginBase {
 
     protected function onEnable() : void{
         $this->saveResource("kits.yml");
-        $this->getServer()->getCommandMap()->register("ChestKit", new KitCommand());
+        $this->getServer()->getCommandMap()->register("ChestKitPro", new KitCommand());
         $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
         $this->getScheduler()->scheduleRepeatingTask(new CooldownTask(), 20);
     }
